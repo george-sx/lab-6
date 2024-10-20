@@ -1,5 +1,4 @@
 # George
-
 def encode(password):
     '''
     Encodes a numerical password by shifting each digit by 3.
@@ -34,11 +33,11 @@ def main():
         if input_option == "1": # Encode
             password = encode(input("Please enter your password to encode: "))
         elif input_option == "2": # Decode
-            if decode == "":
-                print("There is currently no encoded password saved.")
-            else:
+            try:
                 decoded_password = decode(password)
                 print(f"The encoded password is {password}, and the original password is {decoded_password}.")
+            except:
+                print("No password has been encoded yet.")
         elif input_option == "3": # Quit
             break
         else: # Invalid option
